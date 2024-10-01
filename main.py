@@ -10,8 +10,7 @@ async def index(user_id: int = Path(description="user_id"),
                 timestamp: Optional[str] = Query(None),
                 x_client_version: int = Header()):
     if not timestamp:
-        timestamp = datetime.now().isoformat() #isoformat потрібен щоб преобразувати дату и час
-
+        timestamp = datetime.now().isoformat()
     return {
         "user_id": user_id,
         "timestamp": timestamp,
